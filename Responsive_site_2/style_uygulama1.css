@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    /*kenarlarda boşluk sıfırlandı*/
+    padding: 0;
+    /*kutu içinde boşluk sıfırlandı*/
+    box-sizing: border-box;
+    /*Kenarlıklar sayfaya yapışık olacak şekilde*/
+}
+
+html {
+    font-size: 7px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    /*google'den alınan yazı fontu*/
+    color: #fff;
+    /*Yazı rengi*/
+    font-size: 1.6rem;
+    /*html kısmında söylenen font size'yi 1.6 katına çıkarıyor*/
+    line-height: 4rem;
+    /*Satır aralarındaki mesafe*/
+    text-align: center;
+    background-color: #333;
+    /*Arkaplan rengi*/
+}
+
+a {
+    text-decoration: none;
+    /*Linkin altında çıkan çizgiyi kaldırdı*/
+}
+
+p {
+    padding: 1.6rem 0;
+    /*sağ ve sol sıfır üst ve alt 16px boşluk*/
+}
+img{
+    width: 100%;
+    height: auto; /*resmin çözünürlüğünün bozulmaması için kendi otomatik ölçeklendirsin diye*/
+}
+
+.clearfix::after{ /*contackt us kısmı ile footer kısmının rengi aynı (siyah) oluyordu bunu engellemek için boş bir kısım oluşturduk*/
+    content: "";
+    display: block;
+    clear: both;
+}
+
+header {
+    height: 46rem;
+}
+
+header .bg-image {
+    position: absolute; /*Fotoğrafın üstüne yazı gelmesini sağladı*/
+    background-image: url(images/01.jpg);
+    background-size: cover;
+    /*cover kapsayıcı demek. Arka planı kapla*/
+    background-position: center;
+    /*Merkeze konumlandı foto*/
+    height: 46rem;
+    width: 100%;
+    opacity: 0.5; /*Arkaplan fotosunun opaklığını değiştiriyor. 0 ile 1 arasında değer alır*/
+    z-index: -1; /*Fotonun üstündeki yazının fotonun opaklığından etkilenmemesi için bir alt zemine indirmiş olduk*/
+}
+
+header h1 {
+    padding: 12rem; /*h1 i konumlandırdık.*/
+    padding-bottom: 0;
+}
+
+.btn {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    border: 1px solid #666;
+    padding: 1.6rem 3.2rem;
+    margin: 0.5rem 0;
+    transition:all 0.4s; /*Buton renginin 0.4 saniyede değişmesini söylüyor. Üzerine gelindiğinde*/
+}
+
+.btn:hover{
+    background-color: #fff;
+    color: #333;
+}
+
+#section-a{ /*section kesit,bölüm demek. html de resimler için bölümler oluşturduk. */
+    background-color: #eaeaea;
+    color: #333;
+    padding: 3.2rem 0;
+}
+
+#section-b{
+    padding: 2rem;
+}
+
+#section-b ul {
+    list-style: none; /*Listeden dolayı çıkan madde imlerini kaldırdı*/
+}
+
+#section-b li{
+    background: #fff;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.col-content {
+    padding: 1.5rem; /*resimlerin altındaki açıklamalar için boşluk*/
+}
+
+#section-c{
+    background-color: #eaeaea;
+    color: #333;
+    padding: 5rem;
+}
+
+#section-d .box {
+    padding: 5rem;
+
+}
+
+#section-d .box:first-child { /*section-d'deki bax sınıfındaki ilk eleman anlamında*/
+    background-color: darkslategray;
+}
+
+footer{
+    padding: 4rem;
+    background-color: black;
+}
+
+footer a{
+    color: yellowgreen; /*linke renk verdik*/
+}
+
+@media screen and (min-width:800px) {
+
+    html {
+        font-size: 9px;
+    }
+    
+}
+
+@media screen and (min-width:1200px) {
+
+    html {
+        font-size: 11px;
+    }
+
+    #section-b li {
+        width: 28%;
+        margin: 1%;
+        display: inline-block;
+    }
+    
+    #section-d .box {
+        width: 50%;
+        float: left;
+    }
+}
